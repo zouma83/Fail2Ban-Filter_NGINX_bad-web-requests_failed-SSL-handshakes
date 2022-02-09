@@ -9,6 +9,7 @@
 ```
 {date} {time} [error] {xyz}#{xyz}: *{zyx} open() "/path/to/some/file" failed (2: No such file or directory), client: {source_ip}, server: localhost, request: "{some_request} HTTP/1.1", host: "{target_hostname}"
 {date} {time} [error] {xyz}#{xyz}: *{zyx} "/path/to/some/file" is not found (2: No such file or directory), client: {source_ip}, server: localhost, request: "{some_request} HTTP/1.1", host: "{target_ip}"
+{date} {time} [error] {xyz}#{xyz}: *{zyx} access forbidden by rule, client: {source_ip}, server: {target_hostname}, request: "{some_request} HTTP/1.1", host: "{target_ip}"
 {date} {time} [crit] {xyz}#{xyz}: *{zyx} SSL_do_handshake() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: {source_ip}, server: 0.0.0.0:443
 ```
 
