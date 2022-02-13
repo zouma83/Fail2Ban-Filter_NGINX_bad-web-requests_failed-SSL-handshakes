@@ -2,8 +2,9 @@
 
 ## Fail2Ban filter nginx error.log / access.log to match bad web requests &amp; failed SSL handshakes
 
-###### source nginx errors log
+###### source nginx errors log / access log
 > /var/log/nginx/error.log
+
 > /var/log/nginx/access.log
 
 ###### samples error.log records
