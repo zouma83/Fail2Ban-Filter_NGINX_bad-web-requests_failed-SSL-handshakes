@@ -25,6 +25,10 @@
 failregex = ^ \[error\] \d+#\d+: \*\d+ (\S+ )?\"\S+\" (failed|is not found) \(2\: No such file or directory\), client\: <HOST>, server\: \S*\, request: .*?
             ^ \[error\] \d+#\d+: \*\d+ access forbidden by rule, client\: <HOST>, server\: \S*\, request: .*?
             ^ \[crit\] \d+#\d+: \*\d+ SSL_do_handshake\(\) failed \(SSL\: error\:141CF06C\:SSL routines\:tls_parse_ctos_key_share\:bad key share\) while SSL handshaking, client\: <HOST>, server\: .*?
+            ^<HOST> - - .*GET.* (400|401|403|404|405|406|407|409|429|444|495|496|499) .*?
+            ^<HOST> - - .*GET.* (200|204) .*?
+            ^<HOST> - - .*GET.* (301|302) .*?
+            ^<HOST> - - .*GET.*(\.php|\.asp|\.exe|\.pl|\.cgi|\scgi) .*?
 
 ignoreregex =
 
@@ -33,9 +37,9 @@ datepattern = {^LN-BEG}%%ExY(?P<_sep>[-/.])%%m(?P=_sep)%%d[T ]%%H:%%M:%%S(?:[.,]
               {^LN-BEG}
 
 # DEV Notes:
-# Based on nginx-botsearch filter
-#
-# FM
+# Based on nginx-botsearch filter & nginx-bad-request
+# 
+# Author: FM
 ```
 
 ###### sample jail conf
