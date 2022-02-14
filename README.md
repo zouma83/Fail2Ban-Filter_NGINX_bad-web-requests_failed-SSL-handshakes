@@ -44,7 +44,7 @@ datepattern = {^LN-BEG}%%ExY(?P<_sep>[-/.])%%m(?P=_sep)%%d[T ]%%H:%%M:%%S(?:[.,]
 backend = auto
 enabled = true
 filter = nginx-error
-logpath = /var/log/nginx/error.log
+logpath = %(nginx_error_log)s
 findtime = 604800
 bantime = 86400
 maxretry = 1
