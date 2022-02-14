@@ -1,11 +1,9 @@
 ###### Fail2Ban-Filter_NGINX_bad-web-requests_failed-SSL-handshakes
 
-## Fail2Ban filter nginx error.log / access.log to match bad web requests &amp; failed SSL handshakes
+## Fail2Ban filter nginx error.log to match bad web requests &amp; failed SSL handshakes
 
-###### source nginx errors log / access log
+###### source nginx errors log
 > /var/log/nginx/error.log
-
-> /var/log/nginx/access.log
 
 ###### samples error.log records
 ```
@@ -19,7 +17,6 @@
 ```
 # Fail2Ban filter nginx to match bad web requests & failed SSL handshakes
 # /var/log/nginx/error.log
-# /var/log/nginx/access.log
 
 [INCLUDES]
 
@@ -47,7 +44,7 @@ datepattern = {^LN-BEG}%%ExY(?P<_sep>[-/.])%%m(?P=_sep)%%d[T ]%%H:%%M:%%S(?:[.,]
 backend = auto
 enabled = true
 filter = nginx-error
-logpath = /var/log/nginx/*.log
+logpath = /var/log/nginx/error.log
 findtime = 604800
 bantime = 86400
 maxretry = 1
